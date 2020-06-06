@@ -8,7 +8,7 @@ API 範例
 
 https://ithelp.ithome.com.tw/articles/10206863
 
-* 區域網路連線的連線字串式
+* 區域網路連線的連線字串式 (主從架構)
 
                try
                {
@@ -39,7 +39,7 @@ https://ithelp.ithome.com.tw/articles/10206863
                   MessageBox.Show(ex.Message);
               }
               
- * config file
+ config file
  
  using mysql_connect() as driver.
  
@@ -57,3 +57,8 @@ https://ithelp.ithome.com.tw/articles/10206863
               echo $row['name'];
           }
       ?>
+      
+* Restful
+
+Restful API 為因應網際網路無狀態，所演化出來的前後端完全分離的存取架構。
+透過 http(精確說是 url 就是一串網址)，去後端主機取得資料或資源的一種網路服務。
