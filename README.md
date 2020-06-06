@@ -38,3 +38,22 @@ https://ithelp.ithome.com.tw/articles/10206863
               {
                   MessageBox.Show(ex.Message);
               }
+              
+ * config file
+ 
+ using mysql_connect() as driver.
+ 
+       <?php
+          $dbhost = '127.0.0.1';
+          $dbuser = 'mysql_user';
+          $dbpass = 'mysql_password';
+          $dbname = 'mysql_databaseName';
+          $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+          mysql_query("SET NAMES 'utf8'");
+          mysql_select_db($dbname);
+          $sql = "SELECT * FROM `zen_customer` WHERE `cname` like 'Michael';";
+          $result = mysql_query($sql) or die('MySQL query error');
+          while($row = mysql_fetch_array($result)){
+              echo $row['name'];
+          }
+      ?>
