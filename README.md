@@ -62,3 +62,22 @@ https://ithelp.ithome.com.tw/articles/10206863
 
 Restful API 為因應網際網路無狀態，所演化出來的前後端完全分離的存取架構。
 透過 http(精確說是 url 就是一串網址)，去後端主機取得資料或資源的一種網路服務。
+
+
+    getData() {
+                    const params = {
+                        para01: 'zen_department',
+                        para02: 'did',
+                        para03: 'P',
+                        para04: `${this.cur_page}^${this.cur_size}^did^*^dname like ''%${this.fulltextsearch}%''^basm01`
+                    }
+                    this.$axios.post('/api/orm_api/1/', qs.stringify(params)).then((res) => {
+                        this.loading = false;
+                        if(res.length && res[0]){
+                            this.tableData = res[0];
+                            if(typeof res[0][0] === 'object'){
+                                this.total = res[0][0]._TotalRec;
+                            }
+                        }
+                    })
+                },
